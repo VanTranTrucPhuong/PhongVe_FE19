@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <ng-container *ngFor="let item of danhSachGhe; let stt = index">
+        <app-ghe [ghe]="item" (eventGhe)="datGhe($event)"></app-ghe>
+        <br *ngIf="(stt + 1) % 10 === 0">
+      </ng-container>
+
+    </div>
+    <div class="col-sm-6">
+      Danh sách ghế được đặt
+      <p *ngFor="let item of danhSachGheDaDat; let index = index">Ghế: {{item.TenGhe}} ${{item.GiaVe}} <span style="color:red" (click)="huyGhe(item, index)">[Hủy]</span>
+      </p>
+    </div>
+  </div>
+</div>
